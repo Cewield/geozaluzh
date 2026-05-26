@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Головна – 3D сейсміка Північно-Залужанська площа{% endblock %}
+
+{% block hero_title %}Розрахунок параметрів системи спостереження МСГТ{% endblock %}
+{% block hero_sub %}Північно-Залужанська площа, Крукеницька западина, Передкарпатський прогин{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h3>🎯 Актуальність роботи</h3>
+        <p>Тривимірні сейсмічні дослідження на Північно-Залужанській площі (Самбірський район, Львівська область) дозволяють уточнити геолого-тектонічну будову, знизити ризики буріння та підготувати перспективні об'єкти до пошуково-розвідувальних робіт. Складні умови Крукеницької западини вимагають високої просторової роздільної здатності, яку забезпечує 3D-сейсморозвідка.</p>
+        
+        <h3>📊 Основні результати</h3>
+        <ul>
+            <li>Виконано розрахунок параметрів 3D системи спостережень у програмному середовищі <strong>MESA Expert</strong>.</li>
+            <li>Виділено <strong>{{ horizons_count }} газоносних горизонтів</strong> (НД-5 … НД-15, ВД-13) в інтервалі глибин <strong>{{ min_depth }} – {{ max_depth }} м</strong>.</li>
+            <li>Розмір біна: 25×25 м, крок ПЗ – 100 м, ПП – 50 м, кратність – 32.</li>
+            <li>Розраховано <strong>{{ params_count }} основних параметрів</strong> системи спостереження.</li>
+        </ul>
+        <p>Отримані дані дозволяють побудувати точні структурні карти, визначити апікалі пасток та суттєво підвищити ефективність пошуково-розвідувального буріння.</p>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                📌 Ключові параметри
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><strong>📐 Розмір площі:</strong> 28.4 × 30.0 км</li>
+                    <li><strong>⬇️ Максимальна глибина:</strong> {{ max_depth }} м</li>
+                    <li><strong>🔢 Кількість каналів:</strong> 586</li>
+                    <li><strong>📡 Система:</strong> Input/Output-2</li>
+                    <li><strong>🔁 Кратність:</strong> 32</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                📚 Розділи порталу
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><a href="{% url 'horizons' %}">Газоносні горизонти</a></li>
+                    <li><a href="{% url 'seismic_params_list' %}">Параметри 3D</a></li>
+                    <li><a href="{% url 'density_list' %}">Фізичні властивості порід</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="alert alert-secondary">
+            <strong>💡 Науковий керівник:</strong> Габльовський Б.Б., к.г.н., доцент<br>
+            <strong>📅 Рік захисту:</strong> 2025<br>
+            <strong>🏫 Івано-Франківський національний університет нафти і газу</strong>
+        </div>
+    </div>
+</div>
+{% endblock %}

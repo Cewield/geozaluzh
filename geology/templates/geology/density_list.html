@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Фізичні властивості порід{% endblock %}
+{% block hero_title %}Густина та швидкості гірських порід{% endblock %}
+{% block hero_sub %}За даними лабораторних досліджень та каротажу{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-sm table-striped">
+            <thead class="table-secondary">
+                <tr><th>Вік</th><th>Літологія</th><th>Інтервал (м)</th><th>Щільність (×10³ кг/м³)</th><th>V min (м/с)</th><th>V max (м/с)</th></tr>
+            </thead>
+            <tbody>
+                {% for d in densities %}
+                <tr>
+                    <td>{{ d.age }}</td>
+                    <td>{{ d.lithology }}</td>
+                    <td>{{ d.depth_interval }}</td>
+                    <td>{{ d.density }}</td>
+                    <td>{{ d.v_min|default:"—" }}</td>
+                    <td>{{ d.v_max|default:"—" }}</td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="6">Немає даних. Додайте через адмінку.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

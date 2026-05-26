@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Параметри 3D сейсморозвідки{% endblock %}
+{% block hero_title %}Розраховані параметри системи спостереження{% endblock %}
+{% block hero_sub %}Метод спільної глибинної точки (МСГТ), 32-кратне перекриття{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <table class="table table-hover">
+            <thead class="table-primary">
+                <tr><th>Параметр</th><th>Значення</th><th>Одиниця</th></tr>
+            </thead>
+            <tbody>
+                {% for p in params %}
+                <tr>
+                    <td>{{ p.param_name }}</td>
+                    <td><strong>{{ p.value }}</strong></td>
+                    <td>{{ p.unit }}</td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="3">Параметри ще не додані в адмінку.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
