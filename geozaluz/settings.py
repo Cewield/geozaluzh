@@ -8,7 +8,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'ваш-старий-ключ-як-з�
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.railway.app']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://geozaluzh-production.up.railway.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -81,4 +82,3 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ['https://geozaluzh-production.up.railway.app']
