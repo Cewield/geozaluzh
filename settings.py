@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'ваш-старий-ключ-як-запасний')
 
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = TRUE
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.railway.app']
 
@@ -81,3 +81,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
