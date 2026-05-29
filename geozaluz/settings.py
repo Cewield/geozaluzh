@@ -9,8 +9,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'ваш-старий-ключ-як-з�
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_COOKIE_SECURE = False
-CSRF_COOKIE_HTTPONLY = False
+
 
 
 INSTALLED_APPS = [
@@ -84,3 +83,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
